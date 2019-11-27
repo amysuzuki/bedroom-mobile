@@ -18,8 +18,8 @@ router.post('/', function (req, res) {
 
   //if they clicked Docking Terminal Manager
   if (req.body['DTM']){
-    console.log("Open Bedroom-mobile manager");
-    context.title = "Bedroom-mobile Manager";
+    console.log("Open Docking Terminal manager");
+    context.title = "Docking Terminal Manager";
   };
 
   context.inputEmail = req.body.inputEmail;
