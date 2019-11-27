@@ -4,6 +4,5 @@
 
 To Start App, go to root directory
 1. `npm install` node packages
-2. `npm start`
-
-App will run on Port 4000.
+2. `npm start`. App will run on Port 4000.
+3. Open `localhost:4000` in browser.
