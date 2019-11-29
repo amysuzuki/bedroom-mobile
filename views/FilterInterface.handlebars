@@ -30,13 +30,13 @@
                     {{#each dockingTerminals}}
                     <li class="row">
                         <div class="col-auto">
-                            <div>{{dockingTerminals.name}}</div>
+                            <div>{{this.name}}</div>
                         </div>
                         <div class="col-2">
                             <div>Dates</div>
                         </div>
                         <div class="col-2">
-                            <span>Cost</span><span>{{dockingTerminals.cost}}</span>
+                            <span>Cost</span><span>{{this.cost}}</span>
                         </div>
                         <div class="col-2 btn btn-primary">
                             <button>Register</button>
@@ -51,7 +51,7 @@
             <div class="row">
                 <ul style="list-style-type: none;">
                     {{#each registeredDocks}}
-                    <li><button type="button" class="btn btn-primary">{{registeredDocks.name}}</button></li>
+                    <li><button type="button" class="btn btn-primary">{{this.name}}</button></li>
                     {{/each}}
                 </ul>
             </div>

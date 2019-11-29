@@ -21,8 +21,10 @@ app.use('/static', express.static('public'));
 const login = require('./routes/login');
 const home = require('./routes/home');
 const homepage = require('./routes/homepage');
+const filter = require('./routes/filterInterface')
 app.use('/login', login);
 app.use('/', home);
 app.use('/homepage', homepage);
+app.use('/filterInterface', filter);
 
 app.listen(port, () => console.log(`App listening on port ${port}.`))
