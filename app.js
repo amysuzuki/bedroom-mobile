@@ -27,6 +27,7 @@ const homepage = require('./routes/homepage');
 const filter = require('./routes/filterInterface');
 const utilities = require('./routes/utilities');
 const planner = require('./routes/planner');
+const travel = require('./routes/travel');
 
 app.use('/login', login);
 app.use('/', login);
@@ -34,5 +35,6 @@ app.use('/homepage', homepage);
 app.use('/planner', planner);
 app.use('/utilities', utilities);
 app.use('/filterInterface', filter);
+app.use('/travelInterface', travel);
 
-app.listen(port, () => console.log(`App listening on port ${port}.`))
+app.listen(port, () => console.log(`App listening on port ${port}.`));
