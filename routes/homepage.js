@@ -1,15 +1,40 @@
 var express = require('express')
-var router = express.Router()
+var fs = require('fs');
+let passwordFile = (`${appRoot}/auth.json`);
 
-// define the home page route (home of homepage)
-router.get('/', function (req, res) {
-  res.render('homepage')
-})
+var router = express.Router()
 
 // define the about route
 router.post('/', function (req, res) {
-  res.send('Recieved homepage')
+  if (!req.body.inputEmail || !req.body.inputPassword) {
+    res.redirect('/');
+    return;
+  }
+
+  if (!authenticate(req.body.inputEmail, req.body.inputPassword)) {
+    res.redirect('/?error=noPass');
+    return;
+  }
+
+  res.render('homepage');
 })
 
+function authenticate(username, password) {
+
+  //Read in password
+  let auth = fs.readFileSync(passwordFile);
+  auth = JSON.parse(auth);
+
+  if (!Object.keys(auth).includes(username)) {
+    console.log('Username unfound')
+    return false;
+  }
+
+  if (auth[username] !== password) {
+    console.log('Password incorrect');
+    return false;
+  }
+  return true;
+}
 
 module.exports = router
