@@ -44,17 +44,17 @@ router.get('/search', function (req, res) {
   res.redirect('/FilterInterface');*/
 });
 
-function search(cityName) {
-	//imitate database search function
+function search(cityName) {	
   if(cityName != "" && cityName != null && cityName != undefined)
       cityName.toLowerCase();
+  //imitate database search function  
 	var database = [{name: "Thunder Creak", cost: 9.99, city: "Los Angeles"}, 
 	                {name: "Pine Meadows ", cost: 9.99, city: "Seattle"}, 
 	                {name: "Kent KOAPlace", cost: 9.99, city: "New York"}];
-    var results = database.filter(function(dockingTerminal) {
-        return dockingTerminal.city.toLowerCase() == cityName;
-    });
-    return results;
+  var results = database.filter(function(dockingTerminal) {
+      return dockingTerminal.city.toLowerCase() == cityName;
+  });
+  return results;
 }
 
 module.exports = router
