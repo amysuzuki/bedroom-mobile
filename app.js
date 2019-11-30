@@ -2,7 +2,7 @@ const express = require('express')
 const exphbs  = require('express-handlebars');
 
 const app = express();
-const port = 4000
+const port = process.env.PORT || 4000;
 
 //Get Root of project
 var path = require('path');
