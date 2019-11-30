@@ -29,4 +29,4 @@ app.use('/homepage', homepage);
 app.use('/filterInterface', filter);
 app.use('/travelInterface', travel);
 
-app.listen(port, () => console.log(`App listening on port ${port}.`))
+app.listen(port, () => console.log(`App listening on port ${port}.`));
