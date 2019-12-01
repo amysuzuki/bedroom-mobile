@@ -4,6 +4,11 @@ let passwordFile = (`${appRoot}/auth.json`);
 
 var router = express.Router()
 
+// Do not let users access homepage without logging in. Redirect to login
+router.get('/', function(req, res) {
+  res.redirect('/');
+});
+
 // define the about route
 router.post('/', function (req, res) {
   if (!req.body.inputEmail || !req.body.inputPassword) {
