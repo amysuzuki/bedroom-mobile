@@ -14,3 +14,24 @@ function setUI(){
         view.ui.add(expand,"top-right");
     });
 }
+function stringToPath(pathStr){
+    var path=[];
+    var pathStrArr =pathStr.split(",");
+    for(var i = 0; i<pathStrArr.length;i+=2){
+        path.push([parseFloat(pathStrArr[i]),parseFloat(pathStrArr[i+1])]);
+    }
+    return path;
+}
+function stringToLandMarks(pointsStr){
+    var landMarks=[];
+    var pointStrArr =pointsStr.split(",");
+    for(var i = 0; i<pointStrArr.length;i+=2){
+        landMarks.push(
+            {
+                y:pointStrArr[i],
+                x:pointStrArr[i+1],
+                type:"point"
+            });
+    }
+    return landMarks;
+}
