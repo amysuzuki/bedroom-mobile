@@ -45,13 +45,15 @@ router.get('/search', function (req, res) {
 });
 
 function search(cityName) {	
+  //console.log(dockingTerminal.city.toLowerCase()); //unit test
   if(cityName != "" && cityName != null && cityName != undefined)
-      cityName.toLowerCase();
+      cityName = cityName.toLowerCase();
   //imitate database search function  
 	var database = [{name: "Thunder Creak", cost: 9.99, city: "Los Angeles"}, 
 	                {name: "Pine Meadows ", cost: 9.99, city: "Seattle"}, 
 	                {name: "Kent KOAPlace", cost: 9.99, city: "New York"}];
   var results = database.filter(function(dockingTerminal) {
+      //console.log(dockingTerminal.city.toLowerCase());
       return dockingTerminal.city.toLowerCase() == cityName;
   });
   return results;
