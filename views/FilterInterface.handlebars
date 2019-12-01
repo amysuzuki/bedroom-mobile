@@ -10,7 +10,11 @@
                 <div>Range:</div>
                 <div>
                     <input type="number" name="distance" placeholder="10"> Miles of
-                    <input type="text" name="city" placeholder="City">
+                    {{#if this.searchRecord}}
+                        <input type="text" name="city" placeholder="City" value="{{this.searchRecord}}">
+                    {{else}}
+                        <input type="text" name="city" placeholder="City" value="">
+                    {{/if}}                  
                 </div>
             </div>
             <div class="row">
@@ -25,7 +29,7 @@
         <div id="dockingTerminals" class="col-6 border border-primary">
             <div class="row">
                 <div>Docking Terminals</div>
-                <div><button type="button" class="btn btn-primary">Search</button></div>
+                <div><button type="button" id="search" class="btn btn-primary">Search</button></div>
             </div>
             <div class="row">
                 <ul style="list-style-type: none;" class="col-12">
@@ -60,3 +64,14 @@
         </div>
     </div>
 </div>
+
+<script>
+    document.getElementById("search").addEventListener("click", function(event) {
+        //console.log(document.getElementsByName("city")[0].value);  //unit test
+        var cityName = document.getElementsByName("city")[0].value;
+        var url = "/filterInterface/search"
+        if (cityName != null && cityName != undefined && cityName != "")
+              url = url + "?" +  "cityName=" + cityName.trim(); 
+        window.location = url;
+    });
+</script>
