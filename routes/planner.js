@@ -11,10 +11,10 @@ router.get('/', function (req, res) {
 router.post('/', function(req, res) {
   let query = '?';
   query += `dest=${req.body.destination}`;
-  query += `arrive=${req.body.arriveTime}`;
-  query += `return=${req.body.returnTime}`;
-  query += `ride=${req.body.rideSetting}`;
-  query += `notify=${req.body.notificationSetting}`
+  query += `&arrive=${req.body.arriveTime}`;
+  query += `&return=${req.body.returnTime}`;
+  query += `&ride=${req.body.rideSetting}`;
+  query += `&notify=${req.body.notificationSetting}`
   res.redirect(`/travelInterface${query}`)
 })
 
