@@ -28,8 +28,8 @@ function stringToLandMarks(pointsStr){
     for(var i = 0; i<pointStrArr.length;i+=2){
         landMarks.push(
             {
-                y:pointStrArr[i],
-                x:pointStrArr[i+1],
+                y: pointStrArr[i],
+                x: pointStrArr[i+1],
                 type:"point"
             });
     }
