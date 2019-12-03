@@ -1,1 +1,51 @@
-<p>Trip Planner</p>
+
+<h1>Trip Planner</h1>
+
+<div class="container">
+  <form action="/planner" method="post">
+    <div class="form-group row">
+      <label class="col-3 col-form-label" for="destinationSelection">Destination Docking Terminal</label>
+      <div class="col-8">
+        <select name="destination" id="destinationSelection" class="custom-select">
+          <option selected>Select Destination</option>
+          <option value="1">FIX ME ADD LOCATION</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="arrive-time" class="col-3 col-form-label">Arrive at Destination by</label>
+      <div class="col-8">
+        <input name="arriveTime" class="form-control" type="datetime-local" value="2011-08-19T13:45:00" id="arrive-time">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="leave-time" class="col-3 col-form-label">Return Back by</label>
+      <div class="col-8">
+        <input name="returnTime" class="form-control" type="datetime-local" value="2011-08-19T13:45:00" id="return-time">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-3 col-form-label" for="ride-setting">Ride Settings</label>
+
+      <div class="col-4">
+        <select name="rideSetting" id="ride-setting" class="custom-select">
+          <option selected>Select Preference</option>
+          <option value="1">Prioritize speed</option>
+          <option value="2">Prioritize a smooth ride</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-3 col-form-label" for="notifcation-setting">Notificaton Settings</label>
+      <div class="col-4">
+        <select name="notificationSetting" id="notifcation-setting" class="custom-select">
+          <option selected>Select Destination</option>
+          <option value="1">Push all notifcation</option>
+          <option value="2">Only notify delays from original plan</option>
+          <option value="3">Only notify delays past desired arrival time</option>
+        </select>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
