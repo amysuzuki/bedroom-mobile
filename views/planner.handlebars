@@ -1,4 +1,3 @@
-
 <h1>Trip Planner</h1>
 
 <div class="container">
@@ -7,8 +6,8 @@
       <label class="col-3 col-form-label" for="destinationSelection">Destination Docking Terminal</label>
       <div class="col-8">
         <select name="destination" id="destinationSelection" class="custom-select">
-          <option selected>Select Destination</option>
-          <option value="1">FIX ME ADD LOCATION</option>
+          <option value="" hidden>Select Destination</option>
+          <option value="1" {{#if dest.first}} selected {{/if}}>Las Vegas</option>
         </select>
       </div>
     </div>
@@ -29,9 +28,9 @@
 
       <div class="col-4">
         <select name="rideSetting" id="ride-setting" class="custom-select">
-          <option selected>Select Preference</option>
-          <option value="1">Prioritize speed</option>
-          <option value="2">Prioritize a smooth ride</option>
+          <option value="" hidden>Select Preference</option>
+          <option value="1" {{#if ride.first}} selected {{/if}}>Prioritize speed</option>
+          <option value="2" {{#if ride.second}} selected {{/if}}>Prioritize a smooth ride</option>
         </select>
       </div>
     </div>
@@ -39,13 +38,15 @@
       <label class="col-3 col-form-label" for="notifcation-setting">Notificaton Settings</label>
       <div class="col-4">
         <select name="notificationSetting" id="notifcation-setting" class="custom-select">
-          <option selected>Select Destination</option>
-          <option value="1">Push all notifcation</option>
-          <option value="2">Only notify delays from original plan</option>
-          <option value="3">Only notify delays past desired arrival time</option>
+          <option value="" hidden>Select Notification</option>
+          <option value="1" {{#if notify.first}} selected {{/if}}>Push all notifcation</option>
+          <option value="2" {{#if notify.second}} selected {{/if}}>Only notify delays from original plan</option>
+          <option value="3" {{#if notify.third}} selected {{/if}}>Only notify delays past desired arrival time</option>
         </select>
       </div>
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
 </div>
+
+

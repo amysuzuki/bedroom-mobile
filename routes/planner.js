@@ -4,6 +4,47 @@ var router = express.Router()
 // define the home page route
 router.get('/', function (req, res) {
   let context = {};
+  //console.log(req.query.dest); //test if there are parameters with the request
+  if(req.query.dest != undefined)
+  {
+    //destination options
+    var destOptions = {};
+    switch(req.query.dest) 
+    {
+      case "1":
+        destOptions.first = "1"
+        break;
+    } 
+
+    //rideSetting options
+    var rideOptions = {};
+    switch(req.query.ride) 
+    {
+      case "1":
+        rideOptions.first = "1"
+        break;
+      case "2":
+        rideOptions.second = "2"
+        break;
+    } 
+
+    //notify options
+    var notifyOptions = {};
+    switch(req.query.notify) 
+    {
+      case "1":
+        notifyOptions.first = "1"
+        break;
+      case "2":
+        notifyOptions.second = "2"
+        break;
+      case "3":
+        notifyOptions.third = "3"
+        break;
+    } 
+    context = {dest:destOptions, arrive:req.query.arrive, return:req.query.return, ride:rideOptions, notify:notifyOptions};
+  }
+  //console.log(context); //test context under different conditions
   res.render('planner', context);
 });
 
