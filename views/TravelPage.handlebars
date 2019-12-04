@@ -42,7 +42,7 @@
                 <button class="btn btn-primary col-12">Adjust Preference Settings</button>
             </div>
             <div class="row m-2">
-                <button class="btn btn-primary col-12">Cancel Trip</button>
+                <button class="btn btn-primary col-12" id="cancelBtn">Cancel Trip</button>
             </div>
         </div>
 
@@ -55,4 +55,15 @@
 <script src="/static/tracking.js"></script>
 <script>
     EnableTrackingMap("TravelMap");
+</script>
+
+<script>
+    document.getElementById("cancelBtn").addEventListener("click", function(event) {
+        //method 1: use get request
+            //var url = "/planner?dest={{route.dest}}&arrive={{route.arrivalTime}}&return={{route.return}}&ride={{route.ride}}&notify={{route.notify}}"
+            //window.location.replace(url); //replace current page with url
+
+        //methos 2: just go back
+        window.history.back();
+    });
 </script>
