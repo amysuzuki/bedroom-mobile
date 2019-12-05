@@ -7,27 +7,27 @@ router.get('/', function (req, res) {
   context.electricity={
     current:70,
     max:100,
-    saverStatus: 1
+    saverStatus:"true"
   };
   context.water={
     current:70,
     max:100,
-    saverStatus:1
+    saverStatus:true
   };
   context.wifi={
     current:70,
     max:100,
-    status:1
+    status:true
   };
   context.lights={
-    status:1
+    status:true
   };
   context.room={
-    bed:1,
-    table:1
+    bed:true,
+    table:true
   };
   context.door={
-    locked:1
+    locked:true
   };
   res.render('utilities', context);
 });

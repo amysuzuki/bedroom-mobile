@@ -14,11 +14,11 @@
                 </h2>
             </div>
             <div class="row">
-                
-                <div class="col-6 statSymbol" data-current={{current}} data-max={{max}}
-                    style="visibility:hidden;">Bar Chart</div>
+
+                <div class="col-6 statSymbol" data-current={{current}} data-max={{max}} style="visibility:hidden;">Bar
+                    Chart</div>
                 <div class="col-6 statData">{{current}}/{{max}}</div>
-                
+
             </div>
             <div class="row">
                 <div class="col-12">
@@ -135,6 +135,12 @@
         var UtilityList = ["electricity", "water", "wifi", "lights", "door", "room"];
         UtilityList.forEach((uName) => {
             var utility = $("#" + uName + " .statSymbol");
+            var currVal = utility.attr("data-current");
+            var maxVal = utility.attr("data-max");
+            if (currVal && maxVal) {
+                console.log(uName + ": " + currVal + "/" + maxVal);
+            }
+
         })
     });
 </script>
