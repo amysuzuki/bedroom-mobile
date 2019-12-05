@@ -22,7 +22,7 @@
             </div>
             <div class="row">
                 <div class="col-12">
-                    <button data-current={{saverStatus}}>Save</button>
+                    <button class="toggleStatus" data-current={{saverStatus}}>Save</button>
                     <div>Energy Saving mode</div>
                 </div>
             </div>
@@ -41,7 +41,7 @@
             </div>
             <div class="row">
                 <div class="col-auto">
-                    <button data-current={{water.saverStatus}}>Save</button>
+                    <button class="toggleStatus" data-current={{water.saverStatus}}>Save</button>
                 </div>
                 <div class="col">
                     <div>Water Saving mode</div>
@@ -64,7 +64,7 @@
                         info
                     </div>
                     <div>
-                        <button data-current={{wifi.status}}>on/off</button>
+                        <button class="toggleStatus" data-current={{wifi.status}}>on/off</button>
                     </div>
                 </div>
             </div>
@@ -78,7 +78,7 @@
             </div>
             <div class="row">
                 <div class="col-auto statSymbol" style="visibility:hidden;" data-current={{lights.status}}>
-                    <button>on/off</button>
+                    <button class="toggleStatus">on/off</button>
                 </div>
                 <div class="col statSymbol">
                     info
@@ -97,7 +97,7 @@
             </div>
             <div class="row">
                 <div class="col-12 statSymbol" style="visibility:hidden;">
-                    <button data-current={{door.locked}}>on/off</button>
+                    <button class="toggleStatus" data-current={{door.locked}}>on/off</button>
                 </div>
             </div>
 
@@ -110,7 +110,7 @@
             </div>
             <div class="row">
                 <div class="col-auto statSymbol" style="visibility:hidden;" data-current={{room.bed}}>
-                    <button>on/off</button>
+                    <button class="toggleStatus">on/off</button>
                 </div>
                 <div class="col-auto">
                     dropDown
@@ -119,7 +119,7 @@
             </div>
             <div class="row">
                 <div class="col-auto statSymbol" style="visibility:hidden;" data-current={{room.table}}>
-                    <button>on/off</button>
+                    <button class="toggleStatus">on/off</button>
                 </div>
                 <div class="col-auto">
                     dropDown
@@ -140,7 +140,17 @@
             if (currVal && maxVal) {
                 console.log(uName + ": " + currVal + "/" + maxVal);
             }
+        var toggle = $("#" + uName + " .toggleStatus");
+        var state = toggle.attr("data-current");
+        if (state) {
+                console.log(uName + " toggle: " + state);
+            }
+            //take this data and change the state of the buttons
+        //and create graphs/ symbols
 
+        
         })
+        
+
     });
 </script>
