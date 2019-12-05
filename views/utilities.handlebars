@@ -1,1 +1,132 @@
-<p>utlities</p>
+<div class="container h-100">
+        <div class="row h-10">
+            <h1 class="col-12">
+                Utilities Status
+            </h1>
+        </div>
+        <div class="row h-90">
+
+            <div id="electricity" class="col-4 m-1 p-2 border border-dark">
+                <div class="row">
+                    <h2 class="col-12">
+                        Electricity
+                    </h2>
+                </div>
+                <div class="row">
+                    <div class="col-6 statSymbol" style="visibility:hidden;">Bar Chart</div>
+                    <div class="col-6 statData">70/100</div>
+                </div>
+                <div class="row">
+                    <div class="col-12"><button>Save</button>
+                        <div>Energy Saving mode</div>
+                    </div>
+                </div>
+            </div>
+            <div id="water" class="col-4 m-1 p-2  border border-dark">
+                <div class="row">
+                    <h2 class="col-12">
+                        Water
+                    </h2>
+                </div>
+                <div class="row">
+                    <div class="col-6 statSymbol" style="visibility:hidden;">Bar Chart</div>
+                    <div class="col-6 statData">70/100</div>
+                </div>
+                <div class="row">
+                    <div class="col-auto">
+                        <button>Save</button>
+                    </div>
+                    <div class="col">
+                        <div>Water Saving mode</div>
+                    </div>
+                </div>
+            </div>
+            <div id="wifi" class="col-4 m-1 p-2  border border-dark">
+                <div class="row">
+                    <h2 class="col-12">
+                        Wifi
+                    </h2>
+                </div>
+                <div class="row">
+                    <div class="col-6 statSymbol" style="visibility:hidden;">
+                        wifi symbol
+                    </div>
+                    <div class="col-6 statData">
+                        <div>
+                            info
+                        </div>
+                        <div>
+                            <button>on/off</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div id="lights" class="col-4 m-1 p-2 border border-dark">
+                <div class="row">
+                    <h2 class="col-12">
+                        Lights
+                    </h2>
+                </div>
+                <div class="row">
+                    <div class="col-auto statSymbol" style="visibility:hidden;">
+                        <button>on/off</button>
+                    </div>
+                    <div class="col statSymbol">
+                        info
+                    </div>
+                    <div class="col-auto statSymbol">
+                        currStatus
+                    </div>
+                </div>
+
+            </div>
+            <div id="door" class="col-2 m-1 p-2 border border-dark">
+                <div class="row">
+                    <h2 class="col-12">
+                        Door Lock
+                    </h2>
+                </div>
+                <div class="row">
+                    <div class="col-12 statSymbol" style="visibility:hidden;">
+                        <button>on/off</button>
+                    </div>
+                </div>
+
+            </div>
+            <div id="room" class="col-6 m-1 p-2 border border-dark">
+                <div class="row">
+                    <h2 class="col-12">
+                        Room Settings
+                    </h2>
+                </div>
+                <div class="row">
+                    <div class="col-auto statSymbol" style="visibility:hidden;">
+                        <button>on/off</button>
+                    </div>
+                    <div class="col-auto">
+                        dropDown
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-auto statSymbol" style="visibility:hidden;">
+                        <button>on/off</button>
+                    </div>
+                    <div class="col-auto">
+                        dropDown
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script>
+        $(function(){
+            var UtilityList = ["electricity","water","wifi","lights","door","room"];
+            UtilityList.forEach((uName)=>{
+                var utility = $("#"+uName+" .statSymbol");
+            })
+        });
+    </script>
