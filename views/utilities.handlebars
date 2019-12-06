@@ -13,17 +13,29 @@
                     Electricity
                 </h2>
             </div>
-            <div class="row">
+            {{!-- <div class="row">
 
-                <div class="col-6 statSymbol" data-current={{current}} data-max={{max}} style="visibility:hidden;">Bar
-                    Chart</div>
-                <div class="col-6 statData">{{current}}/{{max}}</div>
+                <div class="col-6 statSymbol" data-current={{current}} data-max={{max}} style="visibility:hidden;">Bar Chart</div>
+                <div class="col-6 statData">{{current}}/{{max}}</div>           
 
+            </div> --}}
+            <div class="progress" style="height: 20px;">
+                <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow={{current}}
+                    aria-valuemin="0" aria-valuemax={{max}}>Charge x%</div>
             </div>
             <div class="row">
                 <div class="col-12">
-                    <button class="toggleStatus" data-current={{saverStatus}}>Save</button>
-                    <div>Energy Saving mode</div>
+                    {{!-- <button class="toggleStatus" data-current={{saverStatus}}>Save</button> --}}
+                    {{!-- <div>Energy Saving mode</div> --}}
+                    <div id="toggleArea">
+                        <h4>Energy Saving:</h4>
+                        <span class="state">Off</span>
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                        <span class="state">On</span>
+                    </div>
                 </div>
             </div>
             {{/with}}
@@ -34,17 +46,32 @@
                     Water
                 </h2>
             </div>
-            <div class="row">
+            {{!-- <div class="row">
                 <div class="col-6 statSymbol" style="visibility:hidden;" data-current={{water.current}}
                     data-max={{water.max}}>Bar Chart</div>
                 <div class="col-6 statData">{{water.current}}/{{water.max}}</div>
+            </div> --}}
+            <div class="progress" style="height: 20px;">
+                <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow={{current}}
+                    aria-valuemin="0" aria-valuemax={{max}}>Charge x%</div>
             </div>
             <div class="row">
-                <div class="col-auto">
+                {{!-- <div class="col-auto">
                     <button class="toggleStatus" data-current={{water.saverStatus}}>Save</button>
                 </div>
                 <div class="col">
                     <div>Water Saving mode</div>
+                </div> --}}
+                <div class="col-12">
+                    <div id="toggleArea">
+                        <h4>Water Saving:</h4>
+                        <span class="state">Off</span>
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                        <span class="state">On</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -57,14 +84,25 @@
             <div class="row">
                 <div class="col-6 statSymbol" style="visibility:hidden;" data-current={{wifi.current}}
                     data-max={{wifi.max}}>
-                    wifi symbol
+
                 </div>
-                <div class="col-6 statData">
+
+                {{!-- <div class="col-6 statData">
                     <div>
                         info
                     </div>
                     <div>
                         <button class="toggleStatus" data-current={{wifi.status}}>on/off</button>
+                    </div>
+                </div> --}}
+                <div class="col-12">
+                    <div id="toggleArea">
+                        <span class="state">Off</span>
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                        <span class="state">On</span>
                     </div>
                 </div>
             </div>
@@ -77,14 +115,24 @@
                 </h2>
             </div>
             <div class="row">
-                <div class="col-auto statSymbol" style="visibility:hidden;" data-current={{lights.status}}>
+                {{!-- <div class="col-auto statSymbol" style="visibility:hidden;" data-current={{lights.status}}>
                     <button class="toggleStatus">on/off</button>
                 </div>
                 <div class="col statSymbol">
                     info
-                </div>
-                <div class="col-auto statSymbol">
+                </div> --}}
+                {{!-- <div class="col-auto statSymbol">
                     {{lights.status}}
+                </div> --}}
+                <div class="col-12">
+                    <div id="toggleArea">
+                        <span class="state">Off</span>
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                        <span class="state">On</span>
+                    </div>
                 </div>
             </div>
 
@@ -96,8 +144,18 @@
                 </h2>
             </div>
             <div class="row">
-                <div class="col-12 statSymbol" style="visibility:hidden;">
+                {{!-- <div class="col-12 statSymbol" style="visibility:hidden;">
                     <button class="toggleStatus" data-current={{door.locked}}>on/off</button>
+                </div> --}}
+                <div class="col-12">
+                    <div id="toggleArea">
+                        <span class="state">Unlocked</span>
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                        <span class="state">Locked</span>
+                    </div>
                 </div>
             </div>
 
@@ -113,7 +171,17 @@
                     <button class="toggleStatus">on/off</button>
                 </div>
                 <div class="col-auto">
-                    dropDown
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Table
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </div>
                 </div>
 
             </div>
@@ -122,14 +190,23 @@
                     <button class="toggleStatus">on/off</button>
                 </div>
                 <div class="col-auto">
-                    dropDown
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Bed
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </div>
                 </div>
-
             </div>
-
         </div>
     </div>
 </div>
+<span class="fas fa-wifi"></span>
 <script>
     $(function () {
         var UtilityList = ["electricity", "water", "wifi", "lights", "door", "room"];
@@ -140,17 +217,17 @@
             if (currVal && maxVal) {
                 console.log(uName + ": " + currVal + "/" + maxVal);
             }
-        var toggle = $("#" + uName + " .toggleStatus");
-        var state = toggle.attr("data-current");
-        if (state) {
+            var toggle = $("#" + uName + " .toggleStatus");
+            var state = toggle.attr("data-current");
+            if (state) {
                 console.log(uName + " toggle: " + state);
             }
             //take this data and change the state of the buttons
-        //and create graphs/ symbols
+            //and create graphs/ symbols
 
-        
+
         })
-        
+
 
     });
 </script>
