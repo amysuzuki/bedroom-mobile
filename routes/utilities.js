@@ -25,7 +25,7 @@ function getData(utility)
       result = {
         current:70,
         max:100,
-        saverStatus:"true"
+        saverStatus:true
       };
       break;
     case "water":
@@ -44,7 +44,7 @@ function getData(utility)
       break;
     case "lights":
       result={
-        status:true
+        status:false
       };          
       break;
     case "room":

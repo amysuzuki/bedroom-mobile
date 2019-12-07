@@ -6,12 +6,13 @@
     </div>
     <div class="row h-90">
 
-        <div id="electricity" class="col-4 m-1 p-2 border border-dark">
-            {{#with electricity}}
+        <div id="electricity" class="col-4 p-2 border border-dark">
             <div class="row">
-                <h2 class="col-12">
-                    Electricity
-                </h2>
+                <div class="col-12">
+                    <h2>
+                        Electricity
+                    </h2>
+                </div>
             </div>
             {{!-- <div class="row">
 
@@ -19,32 +20,42 @@
                 <div class="col-6 statData">{{current}}/{{max}}</div>           
 
             </div> --}}
-            <div class="progress" style="height: 20px;">
-                <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow={{current}}
-                    aria-valuemin="0" aria-valuemax={{max}}>Charge x%</div>
-            </div>
-            <div class="row">
+            <div class="row" style="height: 20px;">
                 <div class="col-12">
-                    {{!-- <button class="toggleStatus" data-current={{saverStatus}}>Save</button> --}}
-                    {{!-- <div>Energy Saving mode</div> --}}
-                    <div id="toggleArea">
-                        <h4>Energy Saving:</h4>
-                        <span class="state">Off</span>
-                        <label class="switch">
-                            <input type="checkbox">
-                            <span class="slider round"></span>
-                        </label>
-                        <span class="state">On</span>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-valuenow={{electricity.current}}
+                            aria-valuemin="0" aria-valuemax={{electricity.max}} style="width: %">
+                            Charge x%</div>
                     </div>
                 </div>
             </div>
-            {{/with}}
-        </div>
-        <div id="water" class="col-4 m-1 p-2  border border-dark">
             <div class="row">
-                <h2 class="col-12">
-                    Water
-                </h2>
+                <div class="col-12">
+                    <h4>Energy Saving:</h4>
+                </div>
+                <div class="col-auto">
+                    <span class="state">Off</span>
+                </div>
+                <div class="col-auto">
+                    <label class="switch">
+                        <input type="checkbox" {{#if electricity.saverStatus}}checked{{/if}}>
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div class="col-auto">
+                    <span class="state">On</span>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="water" class="col-4 p-2  border border-dark">
+            <div class="row">
+                <div class="col-12">
+                    <h2>
+                        Water
+                    </h2>
+                </div>
             </div>
             {{!-- <div class="row">
                 <div class="col-6 statSymbol" style="visibility:hidden;" data-current={{water.current}}
@@ -52,40 +63,39 @@
                 <div class="col-6 statData">{{water.current}}/{{water.max}}</div>
             </div> --}}
             <div class="progress" style="height: 20px;">
-                <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow={{current}}
-                    aria-valuemin="0" aria-valuemax={{max}}>Charge x%</div>
+                <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow={{water.current}}
+                    aria-valuemin="0" aria-valuemax={{water.max}}>Charge x%</div>
             </div>
             <div class="row">
-                {{!-- <div class="col-auto">
-                    <button class="toggleStatus" data-current={{water.saverStatus}}>Save</button>
-                </div>
-                <div class="col">
-                    <div>Water Saving mode</div>
-                </div> --}}
                 <div class="col-12">
-                    <div id="toggleArea">
-                        <h4>Water Saving:</h4>
-                        <span class="state">Off</span>
-                        <label class="switch">
-                            <input type="checkbox">
-                            <span class="slider round"></span>
-                        </label>
-                        <span class="state">On</span>
-                    </div>
+                    <h4>Water Saving:</h4>
+                </div>
+                <div class="col-auto">
+                    <span class="state">Off</span>
+                </div>
+                <div class="col-auto">
+                    <label class="switch">
+                        <input type="checkbox" {{#if water.saverStatus}}checked{{/if}}>
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div class="col-auto">
+                    <span class="state">On</span>
                 </div>
             </div>
         </div>
-        <div id="wifi" class="col-4 m-1 p-2  border border-dark">
+        <div id="wifi" class="col-4 p-2  border border-dark">
             <div class="row">
-                <h2 class="col-12">
-                    Wifi
-                </h2>
+                <div class="col-12">
+                    <h2>
+                        Wifi
+                    </h2>
+                </div>
             </div>
             <div class="row">
-                <div class="col-6 statSymbol" style="visibility:hidden;" data-current={{wifi.current}}
+                {{!-- <div class="col-6 statSymbol" style="visibility:hidden;" data-current={{wifi.current}}
                     data-max={{wifi.max}}>
-
-                </div>
+                </div> --}}
 
                 {{!-- <div class="col-6 statData">
                     <div>
@@ -95,118 +105,122 @@
                         <button class="toggleStatus" data-current={{wifi.status}}>on/off</button>
                     </div>
                 </div> --}}
-                <div class="col-12">
-                    <div id="toggleArea">
-                        <span class="state">Off</span>
-                        <label class="switch">
-                            <input type="checkbox">
-                            <span class="slider round"></span>
-                        </label>
-                        <span class="state">On</span>
-                    </div>
+                <div class="col-auto">
+                    <span class="state">Off</span>
+                </div>
+                <div class="col-auto">
+                    <label class="switch">
+                        <input type="checkbox" {{#if wifi.status}}checked{{/if}}>
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div class="col-auto">
+                    <span class="state">On</span>
                 </div>
             </div>
 
         </div>
-        <div id="lights" class="col-4 m-1 p-2 border border-dark">
-            <div class="row">
-                <h2 class="col-12">
+        <div id="lights" class="col-4 p-2 border border-dark">
+        <div class="row">
+            <div class="col-12">
+                <h2>
                     Lights
                 </h2>
             </div>
-            <div class="row">
-                {{!-- <div class="col-auto statSymbol" style="visibility:hidden;" data-current={{lights.status}}>
-                    <button class="toggleStatus">on/off</button>
-                </div>
-                <div class="col statSymbol">
-                    info
-                </div> --}}
-                {{!-- <div class="col-auto statSymbol">
-                    {{lights.status}}
-                </div> --}}
-                <div class="col-12">
-                    <div id="toggleArea">
-                        <span class="state">Off</span>
-                        <label class="switch">
-                            <input type="checkbox">
-                            <span class="slider round"></span>
-                        </label>
-                        <span class="state">On</span>
-                    </div>
-                </div>
-            </div>
-
         </div>
-        <div id="door" class="col-2 m-1 p-2 border border-dark">
-            <div class="row">
-                <h2 class="col-12">
+        <div class="row">
+            <div class="col-auto">
+                <span class="state">Off</span>
+            </div>
+            <div class="col-auto">
+                <label class="switch">
+                    <input type="checkbox" {{#if lights.status}}checked{{/if}}>
+                    <span class="slider round"></span>
+                </label>
+            </div>
+            <div class="col-auto">
+                <span class="state">On</span>
+            </div>
+        </div>
+
+    </div>
+    <div id="door" class="col-4 p-2 border border-dark">
+        <div class="row">
+            <div class="col-12">
+                <h2>
                     Door Lock
                 </h2>
             </div>
-            <div class="row">
-                {{!-- <div class="col-12 statSymbol" style="visibility:hidden;">
-                    <button class="toggleStatus" data-current={{door.locked}}>on/off</button>
+        </div>
+        <div class="row">
+            <div class="col-auto">
+                <span class="state ">Unlocked</span>
+            </div>
+            <div class="col-auto">
+                <label class="switch">
+                    <input type="checkbox" {{#if door.locked}}checked{{/if}}>
+                    <span class="slider round"></span>
+                </label>
+            </div>
+            <div class="col-auto">
+                <span class="state">Locked</span>
+            </div>
+
+        </div>
+
+    </div>
+    <div id="room" class="col-6 p-2 border border-dark">
+        <div class="row">
+            <div class="col-12">
+                <h2>
+                    Room Settings
+                </h2>
+            </div>
+        </div>
+        <div class="row">
+            {{!-- <div class="col-auto statSymbol" style="visibility:hidden;" data-current={{room.bed}}>
+                    <button class="toggleStatus">on/off</button>
                 </div> --}}
-                <div class="col-12">
-                    <div id="toggleArea">
-                        <span class="state">Unlocked</span>
-                        <label class="switch">
-                            <input type="checkbox">
-                            <span class="slider round"></span>
-                        </label>
-                        <span class="state">Locked</span>
+            <div class="col-auto">
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Table
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
                     </div>
                 </div>
             </div>
 
         </div>
-        <div id="room" class="col-6 m-1 p-2 border border-dark">
-            <div class="row">
-                <h2 class="col-12">
-                    Room Settings
-                </h2>
-            </div>
-            <div class="row">
-                <div class="col-auto statSymbol" style="visibility:hidden;" data-current={{room.bed}}>
-                    <button class="toggleStatus">on/off</button>
-                </div>
-                <div class="col-auto">
-                    <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Table
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <div class="row">
-                <div class="col-auto statSymbol" style="visibility:hidden;" data-current={{room.table}}>
-                    <button class="toggleStatus">on/off</button>
-                </div>
-                <div class="col-auto">
-                    <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Bed
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
+        <div class="row">
+            {{!-- <div class="col-auto statSymbol" style="visibility:hidden;" data-current={{room.table}}>
+                <button class="toggleStatus">on/off</button>
+            </div> --}}
+            <div class="col-auto">
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Bed
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    </div>
+    
 </div>
-<span class="fas fa-wifi"></span>
+
+
+</div>
 <script>
     $(function () {
         var UtilityList = ["electricity", "water", "wifi", "lights", "door", "room"];
