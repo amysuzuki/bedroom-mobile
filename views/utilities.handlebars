@@ -14,18 +14,12 @@
                     </h2>
                 </div>
             </div>
-            {{!-- <div class="row">
-
-                <div class="col-6 statSymbol" data-current={{current}} data-max={{max}} style="visibility:hidden;">Bar Chart</div>
-                <div class="col-6 statData">{{current}}/{{max}}</div>           
-
-            </div> --}}
             <div class="row" style="height: 20px;">
                 <div class="col-12">
                     <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow={{electricity.current}}
-                            aria-valuemin="0" aria-valuemax={{electricity.max}} style="width: %">
-                            Charge x%</div>
+                        <div class="progress-bar" role="progressbar" style="width: {{electricity.current}}%;" aria-valuenow={{electricity.current}}
+                            aria-valuemin="0" aria-valuemax="{{electricity.max}}" style="width: %">{{electricity.current}}%
+                        </div>
                     </div>
                 </div>
             </div>
@@ -38,7 +32,7 @@
                 </div>
                 <div class="col-auto">
                     <label class="switch">
-                        <input type="checkbox" {{#if electricity.saverStatus}}checked{{/if}}>
+                        <input type="checkbox" {{#if electricity.saverStatus}}checked{{/if}} data-toggle="toggle" data-on="On" data-off="Off" data-style="ios" data-height="20" data-width="100">
                         <span class="slider round"></span>
                     </label>
                 </div>
@@ -57,14 +51,9 @@
                     </h2>
                 </div>
             </div>
-            {{!-- <div class="row">
-                <div class="col-6 statSymbol" style="visibility:hidden;" data-current={{water.current}}
-                    data-max={{water.max}}>Bar Chart</div>
-                <div class="col-6 statData">{{water.current}}/{{water.max}}</div>
-            </div> --}}
             <div class="progress" style="height: 20px;">
-                <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow={{water.current}}
-                    aria-valuemin="0" aria-valuemax={{water.max}}>Charge x%</div>
+                <div class="progress-bar" role="progressbar" style="width: {{water.current}}%;" aria-valuenow={{water.current}}
+                    aria-valuemin="0" aria-valuemax={{water.max}}>{{water.current}}%</div>
             </div>
             <div class="row">
                 <div class="col-12">
@@ -75,7 +64,7 @@
                 </div>
                 <div class="col-auto">
                     <label class="switch">
-                        <input type="checkbox" {{#if water.saverStatus}}checked{{/if}}>
+                        <input type="checkbox" {{#if water.saverStatus}}checked{{/if}} data-toggle="toggle" data-on="On" data-off="Off" data-style="ios" data-height="20" data-width="100">
                         <span class="slider round"></span>
                     </label>
                 </div>
@@ -92,19 +81,8 @@
                     </h2>
                 </div>
             </div>
+            <img src="..\..\public\images\wifi.png">
             <div class="row">
-                {{!-- <div class="col-6 statSymbol" style="visibility:hidden;" data-current={{wifi.current}}
-                    data-max={{wifi.max}}>
-                </div> --}}
-
-                {{!-- <div class="col-6 statData">
-                    <div>
-                        info
-                    </div>
-                    <div>
-                        <button class="toggleStatus" data-current={{wifi.status}}>on/off</button>
-                    </div>
-                </div> --}}
                 <div class="col-auto">
                     <span class="state">Off</span>
                 </div>

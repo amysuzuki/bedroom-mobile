@@ -30,7 +30,7 @@ function getData(utility)
       break;
     case "water":
       result={
-        current:70,
+        current:75,
         max:100,
         saverStatus:true
       }; 
